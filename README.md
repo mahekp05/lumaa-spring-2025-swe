@@ -16,27 +16,35 @@ The app allows users to register, log in, create, update, delete, and view their
 
 2. Backend Setup
 
-Install dependencies:
-`cd task-manager-backend`
-`npm install express pg sequelize sequelize-cli dotenv cors bcrypt jsonwebtoken nodemon`
-`npm install`
+        Install dependencies:
 
-Set Up Environment Variables:
-Create a '.env' file in the backend/ directory and add:
-`PORT=5000`
-`DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/taskmanager`
-`JWT_SECRET=your_secret_key`
-Change it according to your password and secret key
+        `cd task-manager-backend`
 
-Set Up Database:
+        `npm install express pg sequelize sequelize-cli dotenv cors bcrypt jsonwebtoken nodemon`
 
-Ensure **PostgreSql** is running on your system. Then run,
+        `npm install`
 
-`psql -U postgres -c "CREATE DATABASE taskmanager;"`
+        Set Up Environment Variables:
+
+        Create a '.env' file in the backend/ directory and add:
+
+        `PORT=5000`
+
+        `DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/taskmanager`
+
+        `JWT_SECRET=your_secret_key`
+        
+        Change it according to your password and secret key
+
+        Set Up Database:
+
+        Ensure **PostgreSql** is running on your system. Then run,
+
+        `psql -U postgres -c "CREATE DATABASE taskmanager;"`
 
 
-Start Backend server:
-`npm start`
+3. Start Backend server:
+        `npm start`
 
 
 ## Frontend Setup (React + TypeScript)
