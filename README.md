@@ -16,7 +16,7 @@ The app allows users to register, log in, create, update, delete, and view their
 
 2. Backend Setup
 
-        Install dependencies:
+        ***Install dependencies:***
 
         `cd task-manager-backend`
 
@@ -24,7 +24,7 @@ The app allows users to register, log in, create, update, delete, and view their
 
         `npm install`
 
-        Set Up Environment Variables:
+       *** Set Up Environment Variables:***
 
         Create a '.env' file in the backend/ directory and add:
 
@@ -36,7 +36,7 @@ The app allows users to register, log in, create, update, delete, and view their
         
         Change it according to your password and secret key
 
-        Set Up Database:
+        *** Set Up Database: ***
 
         Ensure **PostgreSql** is running on your system. Then run,
 
@@ -49,9 +49,9 @@ The app allows users to register, log in, create, update, delete, and view their
 
 ## Frontend Setup (React + TypeScript)
 
-Install Frontend Dependencies:
+*** Install Frontend Dependencies: ***
 
-For react:
+For react: 
 `npm install react react-dom react-router-dom axios @mui/material @mui/icons-material @emotion/react @emotion/styled`
 
 For typescript:
