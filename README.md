@@ -24,7 +24,7 @@ The app allows users to register, log in, create, update, delete, and view their
 
         `npm install`
 
-    *** Set Up Environment Variables:***
+    ***Set Up Environment Variables:***
 
         Create a '.env' file in the backend/ directory and add:
 
@@ -36,12 +36,15 @@ The app allows users to register, log in, create, update, delete, and view their
         
     Change it according to your password and secret key
 
-    *** Set Up Database: ***
+    ***Set Up Database:***
 
     Ensure **PostgreSql** is running on your system. Then run,
 
         `psql -U postgres -c "CREATE DATABASE taskmanager;"`
 
+    Database Migrations
+        
+        `npx sequelize-cli db:migrate`
 
 3. Start Backend server:
         `npm start`
@@ -62,6 +65,22 @@ To run:
 `npm install`
 
 `npm start`
+
+# Use Postman or cURL to test backend API test points:
+
+**Register a user:**
+
+    curl -X POST http://localhost:5000/auth/register -H "Content-Type: application/json" -d '{"username":"testuser","password":"password"}'
+    
+**Login and get a token**
+
+    curl -X POST http://localhost:5000/auth/login -H "Content-Type: application/json" -d '{"username":"testuser","password":"password"}'
+
+**Copy the token and include it in all subsequent requests:
+**
+**Create a task:
+**
+    curl -X POST http://localhost:5000/tasks -H "Authorization: Bearer YOUR_TOKEN_HERE" -H "Content-Type: application/json" -d '{"title":"Finish project","description":"Complete the task manager app"}'
 
 
 ### Salary Expectations: $5000
