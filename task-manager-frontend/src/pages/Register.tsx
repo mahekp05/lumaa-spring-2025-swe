@@ -11,13 +11,15 @@ const Register = () => {
     e.preventDefault();
     try {
       await api.post("/auth/register", { username, password });
-      alert("Registration successful! Please log in.");
-      navigate("/login");
-    } catch (error) {
-      alert("Registration failed. Try again.");
+      alert("Registration successful! Redirecting to login...");
+      navigate("/login"); // ✅ Redirect to login page
+    } catch (error: any) {
+      console.error("Registration Error:", error.response?.data || error.message);
+      alert(error.response?.data?.error || "Registration failed. Try again.");
     }
   };
 
+  
   return (
     <div>
       <h2>Register</h2>

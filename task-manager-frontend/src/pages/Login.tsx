@@ -14,14 +14,17 @@ const Login = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-     const response = await api.post<AuthResponse>("/auth/login", { username, password });
+      const response = await api.post<{ token: string }>("/auth/login", { username, password });
+      
+      localStorage.setItem("token", response.data.token); // ✅ Store token in localStorage
       alert("Login successful!");
       navigate("/dashboard");
-    } catch (error) {
-      alert("Login failed. Check credentials.");
+    } catch (error: any) {
+      console.error("Login Error:", error.response?.data || error.message);
+      alert(error.response?.data?.error || "Login failed. Check credentials.");
     }
   };
-
+  
   return (
     <div>
       <h2>Login</h2>

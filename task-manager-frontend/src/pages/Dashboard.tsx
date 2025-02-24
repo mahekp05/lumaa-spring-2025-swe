@@ -21,15 +21,26 @@ const Dashboard = () => {
   }, []);
 
   const fetchTasks = async () => {
+    const token = localStorage.getItem("token"); //  Retrieve token from localStorage
+  
+    if (!token) {
+      alert("No authentication token found. Please log in again.");
+      navigate("/login");
+      return;
+    }
+  
     try {
-      const response = await api.get<Task[]>("/tasks");
+      const response = await api.get<Task[]>("/tasks", {
+        headers: { Authorization: `Bearer ${token}` }, //  Send token in headers
+      });
       setTasks(response.data);
-    } catch (error) {
-      alert("Failed to fetch tasks. Please log in again.");
+    } catch (error: any) {
+      console.error("Fetch Tasks Error:", error.response?.data || error.message); //  Log exact error
+      alert(error.response?.data?.error || "Failed to fetch tasks. Please log in again.");
       navigate("/login");
     }
   };
-
+  
   return (
     <div>
       <h2>Task Manager</h2>
