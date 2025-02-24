@@ -10,57 +10,20 @@ The app allows users to register, log in, create, update, delete, and view their
 - Frontend: Built using React + TypeScript.
 
 ## Setup Instructions
-1. Clone the Repository
-`git clone <your-forked-repository-url>`
+1. Download Repositary
+2. Open Command Prompt
+   `cd <path to application file>`
 
-2. Backend Setup
-
-    ***Install dependencies:***
-
-        `cd task-manager-backend`
-
-        `npm install express pg sequelize sequelize-cli dotenv cors bcrypt jsonwebtoken nodemon dotenv`
-
-        `npm install`
-
-    ***Set Up Environment Variables:***
-
-        In the '.env' file in the backend/ directory and change it according to your password and secret key. Make sure you have Postgre installed already and set up. 
-
-
-        `PORT=5000`
-
-        `DATABASE_URL=postgresql://postgres:yourpassword@localhost:5432/taskmanager`
-
-        `JWT_SECRET=your_secret_key`
-        
-
-    ***Set Up Database:***
-
-    Ensure **PostgreSql** is running on your system. Then run,
-
-        `psql -U postgres -c
-         CREATE DATABASE taskmanagement;`
-
-    Database Migrations
-        npm install -g sequelize-cli
-         npx sequelize init
-        `npx sequelize-cli db:migrate`
-
-4. Start Backend server:
-        `npm start`
+4. Backend Setup
+      Ensure latest version of **Node.js** and **PostgreSql** are installed and running on your computer. Ensure they are    also added to your system's environmental variables. Then run on command prompt,
+         `cd task-manager-backend`
+         `npm install`
+         `npm start`
 
 
 ## Frontend Setup (React + TypeScript)
 
 *** Install Frontend Dependencies: ***
-
-For react: 
-`npm install react react-dom react-router-dom axios @mui/material @mui/icons-material @emotion/react @emotion/styled`
-
-For typescript:
-`npm install --save-dev @types/react @types/react-dom @types/react-router-dom @types/node @types/axios`
-
 To run:
 `cd task-manager-frontend`
 `npm install`
