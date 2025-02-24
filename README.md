@@ -12,7 +12,6 @@ The app allows users to register, log in, create, update, delete, and view their
 ## Setup Instructions
 1. Clone the Repository
 `git clone <your-forked-repository-url>`
-`cd task-manager`
 
 2. Backend Setup
 
@@ -20,13 +19,14 @@ The app allows users to register, log in, create, update, delete, and view their
 
         `cd task-manager-backend`
 
-        `npm install express pg sequelize sequelize-cli dotenv cors bcrypt jsonwebtoken nodemon`
+        `npm install express pg sequelize sequelize-cli dotenv cors bcrypt jsonwebtoken nodemon dotenv`
 
         `npm install`
 
     ***Set Up Environment Variables:***
 
-        Create a '.env' file in the backend/ directory and add:
+        In the '.env' file in the backend/ directory and change it according to your password and secret key. Make sure you have Postgre installed already and set up. 
+
 
         `PORT=5000`
 
@@ -34,19 +34,20 @@ The app allows users to register, log in, create, update, delete, and view their
 
         `JWT_SECRET=your_secret_key`
         
-    Change it according to your password and secret key
 
     ***Set Up Database:***
 
     Ensure **PostgreSql** is running on your system. Then run,
 
-        `psql -U postgres -c "CREATE DATABASE taskmanager;"`
+        `psql -U postgres -c
+         CREATE DATABASE taskmanagement;`
 
     Database Migrations
-        
+        npm install -g sequelize-cli
+         npx sequelize init
         `npx sequelize-cli db:migrate`
 
-3. Start Backend server:
+4. Start Backend server:
         `npm start`
 
 
