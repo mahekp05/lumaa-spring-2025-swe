@@ -16,8 +16,11 @@ The app allows users to register, log in, create, update, delete, and view their
 
 4. Backend Setup
       Ensure latest version of **Node.js** and **PostgreSql** are installed and running on your computer. Ensure they are    also added to your system's environmental variables. Then run on command prompt,
+   
          `cd task-manager-backend`
+   
          `npm install`
+   
          `npm start`
 
 
@@ -26,6 +29,7 @@ The app allows users to register, log in, create, update, delete, and view their
 *** Install Frontend Dependencies: ***
 To run:
 `cd task-manager-frontend`
+
 `npm install`
 
 `npm start`
