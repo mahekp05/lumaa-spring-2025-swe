@@ -51,4 +51,3 @@ To run:
     curl -X POST http://localhost:5000/tasks -H "Authorization: Bearer YOUR_TOKEN_HERE" -H "Content-Type: application/json" -d '{"title":"Finish project","description":"Complete the task manager app"}'
 
 
-### Salary Expectations: $5000
